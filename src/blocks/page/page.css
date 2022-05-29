@@ -1,0 +1,8 @@
+.page {
+  min-width: 375px;
+  height: 100vh;
+  margin: 0 auto;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-style: normal;
+}
