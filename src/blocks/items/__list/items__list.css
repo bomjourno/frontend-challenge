@@ -1,11 +1,9 @@
-.cats__list {
+.items__list {
   display: grid;
   gap: 46px;
   grid-template-columns: repeat(auto-fill, 225px);
   justify-content: center;
-
   padding: 0 calc(30px + (40 - 30) * (100vw - 375px) / (1440 - 375)) 0 calc(30px + (40 - 30) * (100vw - 375px) / (1440 - 375));
   margin: 0;
-
   list-style-type: none;
 }

@@ -1,15 +1,3 @@
-// interface IRes {
-//   breeds: []
-//   id: string
-//   url: string
-//   width: number
-//   height: number
-//   categories?: {
-//     id: number
-//     name: string
-//   }
-// }
-
 class Api {
   private baseUrl: string
   constructor(app: { baseUrl: string }) {

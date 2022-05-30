@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Cats } from './components/Cats'
+import { Items } from './components/Items'
 import { Favourites } from './components/Favourites'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
@@ -16,15 +16,17 @@ function App() {
     })
   }, [])
 
+  const appendItems = useCallback(() => {
+    api.getItems().then((res) => setItems((prevState) => [...prevState, ...res]))
+  }, [setItems])
+
   return (
     <div className='page'>
       <Header />
-      <div className='main'>
-        <Routes>
-          <Route path='/favourites' element={<Favourites />} />
-          <Route path='/' element={<Cats items={items} />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path='/favourites' element={<Favourites />} />
+        <Route path='/' element={<Items appendItems={appendItems} items={items} />} />
+      </Routes>
       <Footer />
     </div>
   )
