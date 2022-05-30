@@ -7,8 +7,9 @@ interface IGetItems {
   setItems: (items: IItem[]) => void
 }
 
-export function useGetItems(): [IItem[], boolean, () => void] {
+export function useGetItems(): [IItem[], () => void, boolean, boolean] {
   const [isLoading, setIsLoading] = useState<boolean>(true)
+  const [isLoadAppendItems, setIsLoadAppendItems] = useState<boolean>(false)
   const [items, setItems] = useState<IItem[]>([])
 
   const getItems = ({ setIsLoading, setItems }: IGetItems) => {
@@ -18,12 +19,16 @@ export function useGetItems(): [IItem[], boolean, () => void] {
     })
   }
   const appendItems = useCallback(() => {
-    api.getItems().then((res) => setItems((prevState) => [...prevState, ...res]))
+    setIsLoadAppendItems(true)
+    api
+      .getItems()
+      .then((res) => setItems((prevState) => [...prevState, ...res]))
+      .finally(() => setIsLoadAppendItems(false))
   }, [setItems])
 
   useEffect(() => {
     getItems({ setIsLoading, setItems })
   }, [])
 
-  return [items, isLoading, appendItems]
+  return [items, appendItems, isLoading, isLoadAppendItems]
 }

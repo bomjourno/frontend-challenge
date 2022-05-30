@@ -7,7 +7,7 @@ import { Header } from './components/Header'
 import { useGetItems } from './hooks/useGetItems'
 
 function App() {
-  const [items, isLoading, appendItems] = useGetItems()
+  const [items, appendItems, isLoading, isLoadAppendItems] = useGetItems()
 
   return (
     <div className='page'>
@@ -19,7 +19,7 @@ function App() {
           element={<Items isLoading={isLoading} appendItems={appendItems} items={items} />}
         />
       </Routes>
-      <Footer />
+      <Footer isLoadAppendItems={isLoadAppendItems} />
     </div>
   )
 }

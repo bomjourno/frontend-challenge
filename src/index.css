@@ -11,3 +11,5 @@
 @import url(./blocks/item/__image/item__image.css);
 @import url(./blocks/like/like.css);
 @import url(./blocks/like/_enable/like_enable.css);
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/append-items-loader/append-items-loader.css);
