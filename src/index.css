@@ -4,6 +4,7 @@
 @import url(./blocks/header/header.css);
 @import url(./blocks/header/_tab/header_tab.css);
 @import url(./blocks/header/__container/header__container.css);
+@import url(./blocks/loader/loader.css);
 @import url(./blocks/items/items.css);
 @import url(./blocks/items/__list/items__list.css);
 @import url(./blocks/item/item.css);
