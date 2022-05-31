@@ -8,9 +8,10 @@ interface IItemsProps {
   items: IItem[]
   appendItems: () => void
   isLoading: boolean
+  addFavouriteItem: (value: string | number) => void
 }
 
-export const Items = ({ items, appendItems, isLoading }: IItemsProps) => {
+export const Items = ({ items, appendItems, isLoading, addFavouriteItem }: IItemsProps) => {
   const [onScroll, containerRef] = useLazyLoading({
     onIntersection: appendItems,
     delay: 1200,
@@ -24,7 +25,12 @@ export const Items = ({ items, appendItems, isLoading }: IItemsProps) => {
     <div className='items' ref={containerRef} onScroll={onScroll}>
       <ul className='items__list'>
         {items.map((item, index) => (
-          <Item key={`${index}-${item.id}`} item={item} />
+          <Item
+            key={`${index}-${item.id}`}
+            item={item}
+            addFavouriteItem={addFavouriteItem}
+            id={item.id}
+          />
         ))}
       </ul>
     </div>

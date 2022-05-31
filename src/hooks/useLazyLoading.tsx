@@ -1,4 +1,4 @@
-import React, { RefObject, useCallback, useRef } from 'react'
+import { useCallback, useRef } from 'react'
 import throttle from 'lodash.throttle'
 
 //реализация бесконечной прокрутки была заимствована: https://ru.stackoverflow.com/questions/1105947/

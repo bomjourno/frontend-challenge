@@ -1,0 +1,8 @@
+.header__tab_active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: #1E88E5;
+
+}

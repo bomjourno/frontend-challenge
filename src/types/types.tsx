@@ -3,7 +3,7 @@ export interface IItem {
   url: string
   width: number
   height: number
-  [key: string]: any
+  [key: string]: string | number
 }
 
 export interface IItems {

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { IItem } from '../types/types'
 import { api } from '../utils/Api'
 
@@ -13,16 +13,23 @@ export function useGetItems(): [IItem[], () => void, boolean, boolean] {
   const [items, setItems] = useState<IItem[]>([])
 
   const getItems = ({ setIsLoading, setItems }: IGetItems) => {
-    api.getItems().then((items) => {
-      setItems(items)
-      setIsLoading(false)
-    })
+    api
+      .getItems()
+      .then((items) => {
+        setItems(items)
+        setIsLoading(false)
+      })
+      .catch((err) => {
+        alert(`Что пошло не так. Ошибка: ${err.status}`)
+        setIsLoading(false)
+      })
   }
   const appendItems = useCallback(() => {
     setIsLoadAppendItems(true)
     api
       .getItems()
       .then((res) => setItems((prevState) => [...prevState, ...res]))
+      .catch((err) => alert(`Что пошло не так. Ошибка: ${err.status}`))
       .finally(() => setIsLoadAppendItems(false))
   }, [setItems])
 
