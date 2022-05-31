@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.01a621da.css",
-    "main.js": "/static/js/main.7a14f70e.js",
-    "static/media/Roboto-Regular.woff2": "/static/media/Roboto-Regular.a25806274237d06e00a6.woff2",
-    "index.html": "/index.html",
-    "static/media/like_disable.svg": "/static/media/like_disable.6adfe85f8b98c6dc6b44.svg",
-    "static/media/like_enable.svg": "/static/media/like_enable.8220379cb36244a7738b.svg",
-    "main.01a621da.css.map": "/static/css/main.01a621da.css.map",
-    "main.7a14f70e.js.map": "/static/js/main.7a14f70e.js.map"
+    "main.css": "/frontend-challenge/static/css/main.7889d4b0.css",
+    "main.js": "/frontend-challenge/static/js/main.7a14f70e.js",
+    "static/media/Roboto-Regular.woff2": "/frontend-challenge/static/media/Roboto-Regular.a25806274237d06e00a6.woff2",
+    "index.html": "/frontend-challenge/index.html",
+    "static/media/like_disable.svg": "/frontend-challenge/static/media/like_disable.6adfe85f8b98c6dc6b44.svg",
+    "static/media/like_enable.svg": "/frontend-challenge/static/media/like_enable.8220379cb36244a7738b.svg",
+    "main.7889d4b0.css.map": "/frontend-challenge/static/css/main.7889d4b0.css.map",
+    "main.7a14f70e.js.map": "/frontend-challenge/static/js/main.7a14f70e.js.map"
   },
   "entrypoints": [
-    "static/css/main.01a621da.css",
+    "static/css/main.7889d4b0.css",
     "static/js/main.7a14f70e.js"
   ]
 }
