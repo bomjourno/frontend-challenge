@@ -25,12 +25,6 @@ function App() {
       <Header />
       <Routes>
         <Route
-          path='/favourites'
-          element={
-            <Favourites addFavouriteItem={addFavouriteItem} favouriteItems={favouriteItems} />
-          }
-        />
-        <Route
           path='/'
           element={
             <Items
@@ -39,6 +33,12 @@ function App() {
               items={items}
               addFavouriteItem={addFavouriteItem}
             />
+          }
+        />
+        <Route
+          path='/favourites'
+          element={
+            <Favourites addFavouriteItem={addFavouriteItem} favouriteItems={favouriteItems} />
           }
         />
       </Routes>
